@@ -29,7 +29,7 @@ The backend provides API endpoints for different functions such as:
 - authentication
 - creating a board
 - deleting a board
-- etc
+- etc...
 
 **File hosting** is done with a NGINX and FTP server. I can upload the files with an FTP connection, and I can embed those files with the NGINX server. If the files are correctly placed in the NGINX server, the server NGINX will automatically create hyperlinks 
 
