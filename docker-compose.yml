@@ -14,8 +14,8 @@ services:
   web:
     image: dannyben/madness
     volumes:
-      - ".:/docs"
-      - "./Learning Outcomes:/path/in/container"
+      - "./:/docs*"
+      # - "./Learning Outcomes:/docs"
     ports:
       - "3000:3000"
     command: server
