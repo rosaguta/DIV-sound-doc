@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                  name="instanceName" start-page="README.md">
+
+    <toc-element topic="README.md"/>
+    <toc-element toc-title="Learning Outcomes">
+        <toc-element topic="3_Agile_Method.md"/>
+        <toc-element topic="4_CICD.md"/>
+        <toc-element topic="6_Requirement_and_design.md"/>
+        <toc-element topic="8_Professional.md"/>
+        <toc-element topic="7_Business_processes.md"/>
+        <toc-element topic="1_Web_Application.md"/>
+        <toc-element topic="5_Cultural_differences_and_ethics.md"/>
+        <toc-element topic="2_Software_Quality.md"/>
+    </toc-element>
+</instance-profile>
