@@ -7,12 +7,18 @@ By monitoring if the End-To-End tests still return OK, I can ensure that the cod
 ### cypress in action
 ![](cypress.gif)
 
-### code behind cypress
-![](cypresscode.png)
+### (partial) code behind cypress
+The following code describes some basic login actions. the first `it` fills out the login form and click on `login`. as a check if the User is authenticated, I added a should operation to check if the string `Hello string` (`Hello <username>`) gets found.
+
+The second `it` operation also fills out the login form with data but the credentials do not exist in my database so the website `should` return `Login failed`
+
+![](cypresslogin.png)
 
 ## Jetbrains Qodana
 
 I've chosen for Qodana for analyzing my code
+
+### why Qodana
 
 Qodana performs static code analysis, which means it analyzes the source code without executing the program. It can detect a wide range of issues, such as code smells, potential bugs, security vulnerabilities, and adherence to coding standards. By identifying these issues early in the development process, developers can write cleaner, more maintainable code.
 
