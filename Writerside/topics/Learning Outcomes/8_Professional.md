@@ -7,7 +7,7 @@ For my group project I've set up a professional guideline for us to follow.
 
 Here is that document in a Markdown format:
 
-**Professionaliteit**
+### Professionaliteit
 
 In dit document worden de regels voor de groep met betrekking tot
 professionaliteit en scrum opgeschreven en duidelijk gemaakt. Er wordt
@@ -32,7 +32,7 @@ chart is gebaseerd op de aantal uren per taak.
 -   In de *\`ideal trendline\`* wordt aangegeven wat het beste aantal
     van remaining work er zou moeten zijn voor die dag
 
-1.  Standup
+1.  **Standup**
 
     a.  Iedere groepswerk dag wordt er een standup gehouden.
 
@@ -43,7 +43,7 @@ chart is gebaseerd op de aantal uren per taak.
     hoger niveau waardoor iedereen aanwezig moet staan om goed mee
     te kunnen doen
 
-2.  Aanwezigheid (10:00 uur max)
+2.  **Aanwezigheid (10:00 uur max)**
 
     a.  Elk lid is verantwoordelijk voor het op tijd komen voor het
     groepsproject.
@@ -54,7 +54,7 @@ chart is gebaseerd op de aantal uren per taak.
     c.  Als het lid te laat is en dit niet vermeld heeft dan gaan de
     rest van de leden door met de standup
 
-3.  Scrum
+3.  **Scrum**
 
     a.  Mochten er aanpassingen worden gemaakt dat invloed heeft op wat
     er op het scrum board staat, dan moet deze direct moeten worden
@@ -69,7 +69,7 @@ chart is gebaseerd op de aantal uren per taak.
     research/ vondsten in de taak zodat het makkelijk terug te
     vinden valt
 
-4.  Retrospective
+4.  **Retrospective**
 
     a.  In de retrospective wordt door ieder lid besproken wat voor
     verbeterpunten er zijn met betrekking tot vorige sprint.
@@ -85,7 +85,7 @@ chart is gebaseerd op de aantal uren per taak.
     d.  Vervolgens noteren wat er besproken is in het checkpoint voor de
     sprintoplevering op canvas.
 
-5.  Communicatie
+5.  **Communicatie**
 
     a.  Indien er keuzes gemaakt (moeten) worden met betrekking tot de
     technologie of structuur van het project zal dit besproken
@@ -96,7 +96,7 @@ chart is gebaseerd op de aantal uren per taak.
     die wij als groep gemaakt hebben zullen we met de Product Owner
     bespreken wat er andere mogelijkheden en oplossingen zijn.
 
-6.  Burndown
+6.  **Burndown**
 
     a.  Na bij elke standup zal er worden gekeken naar de taken die
     gedaan zijn en zal gebaseerd daarop de burndown chart worden
