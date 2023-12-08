@@ -63,27 +63,23 @@ jobs:
 ## Gitlab Pipelines
 After transitioning from GitHub to Gitlab (not the Fontys one), I've set up Gitlab pipelines with the following configuration:
 
-![Gitlab Pipelines](gitlab_dependency.png)
-
+![gitlab_dependency2.png](gitlab_dependency2.png)
 #### Unittest
 In the following piece of YAML, a job is configured to download a Docker image, run it, and execute the `dotnet test` command inside that container.
 
 ```yaml
 stages:
   - build
+  - merge
+  - final_test
 
-variables:
-  Solution_Name: "DIV-SOUND-backend.sln"
-  Test_Project_Path: UnitTest/UnitTest.csproj
 
 test:
   tags:
     - backend
   stage: build
   script:
-    - ls DIV-SOUND-backend
-    - pwd
-    - dotnet test $Test_Project_Path
+    - dotnet test
   only:
     - master
   image: mcr.microsoft.com/dotnet/nightly/sdk:7.0
@@ -108,3 +104,60 @@ build:
   needs:
     - test
 ```
+
+If that job also completes without failure, the following job gets ran:
+
+```yaml
+push_to_main:
+  tags:
+    - backend
+  stage: merge
+  script:
+    - apk update
+    - apk add git
+    - git config --global user.email "rvleeuwen@DigitalIndividuals.com"
+    - git config --global user.name "Rose van Leeuwen"
+    - cd $TMPDIR || exit 1
+    - credentials=$(echo -n ":$pat" | base64)
+    - git clone https://r.vanleeuwen:<PAT>@git.digitalindividuals.com/rvleeuwen/div-sound-backend.git || exit 1
+    - cd div-sound-backend || exit 1
+    - git branch
+    - echo "$CI_COMMIT_MESSAGE"
+    - echo "merging from Development to main"
+    - git pull -a
+    - git merge origin/master -X theirs -m "$CI_COMMIT_MESSAGE"
+    - git push origin main
+    - echo $mergeMessage
+  only:
+    - master
+  needs:
+    - build
+```
+
+This job is responsible for merging the ``master`` branch to the main branch
+(the ``master`` branch is my development branch, but I'm too lazy to change it)
+
+I also have the following job in the main branch:
+
+```yaml
+main_test:
+  tags:
+    - backend
+  stage: final_test
+  only:
+    - main
+  script:
+    - apt-get update
+    - apt-get install -y openjdk-21-jdk
+    - ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+    - ENV PATH $PATH:$JAVA_HOME/bin
+    - export PATH="$PATH:/root/.dotnet/tools"
+    - dotnet tool install --global dotnet-sonarscanner
+    - export SONAR_TOKEN=0ee26b65d77314b8c278ecd08863e68764f6a247
+    - dotnet sonarscanner begin /o:digitialindividuals /k:digitialindividuals_digitialindividuals /d:sonar.host.url=https://sonarcloud.io
+    - dotnet test
+    - dotnet sonarscanner end
+  image: mcr.microsoft.com/dotnet/nightly/sdk:7.0
+```
+
+This job ensures that the last available code in the main branch viable is to clone / run

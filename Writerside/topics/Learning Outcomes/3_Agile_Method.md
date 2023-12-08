@@ -40,7 +40,7 @@ As a **user** I want to be able to upload my sound bites to the website **so tha
 
 ## Other methodologies
 
-there are of course outer agile methods such as:
+there are other agile methods such as:
 
 - **Software development**
 

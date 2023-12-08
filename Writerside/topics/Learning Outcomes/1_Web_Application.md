@@ -46,7 +46,7 @@ On this page, you can see what files are added to the soundboard. The user has t
 
 ## Backend
 
-The backend is made in c# with the web api template. The user doesnt directly interact with this page and the api is normally ran without the UI, but here you can see the different endpoints that are set up so the webapp (or other applications) can interact with it.
+The backend is made in c# with the web api template. The user doesn't directly interact with this page, and the api is normally ran without the UI, but here you can see the different endpoints that are set up so the webapp (or other applications) can interact with it.
 
 ![API.png](API.png)
 
@@ -57,4 +57,4 @@ In the image below you'll see a request that gets soundboards based on a userid 
 
 ## UX Testing
 
-For UX Testing I basically asked my friends for doing some actions on the website. I'll watch them perform some actions.
+For UX Testing, I basically asked my friends to do some actions on the website. I'll watch them perform some actions.
