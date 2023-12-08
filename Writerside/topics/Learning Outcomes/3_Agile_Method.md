@@ -1,16 +1,35 @@
 # Agile Method
 
->in this file I will explain how I worked on this learning outcome
+>**Learning outcome**
+>
+>You can implement the software process for your project according to a given agile software development method.
+>
+>**Clarification**
+>
+>Agile method: You are aware of most popular agile methods and their underlying agile principles. You are able to implement the process of your software project according to a chosen methodology.
 
-## Scrum (GP)
+## Scrum
 
 for my groupproject we used **scrum** as our agile method
 
-Scrum, a widely adopted Agile framework in software development, offers key advantages for our dynamic field. Its flexibility allows teams to adapt to changing requirements and respond swiftly to feedback. The iterative and incremental development approach, with sprints lasting two to four weeks, ensures regular inspection and adaptation, promoting continuous improvement and predictable product delivery.
+#### Why?
 
-Customer involvement is paramount in Scrum, with sprint reviews providing crucial touchpoints for stakeholder feedback. Transparency is maintained through artifacts like the product backlog and burndown charts. Collaboration and open communication are fostered through daily stand-up meetings and planning sessions.
+The reason we choose scrum is because its an easy way to add new things to the project without losing the structure of the project. And ofcourse there are also some other methods to achieve this but we didn't really look into those.
+Scrum also allows for some customer involvement. In our case the stakeholder can add or remove some things for their liking.
 
-Scrum's commitment to risk management is evident in its iterative nature, addressing risks early and reassessing regularly. The methodology optimizes resource utilization by prioritizing high-value features early in the development cycle, ensuring timely delivery of valuable work to stakeholders. In summary, Scrum's adaptability, collaboration, transparency, and continuous improvement make it highly effective in the fast-paced software development landscape.
+#### What even is scrum?
+If you're using scrum, you'll be working in sprints. each sprint is defined by an userstory that was set up beforehand before the project starts. By defining userstories, you basically set some functional requirements for your application. Each userstory is written in the view of the customer and needs to have a reasoning on why the user wants to have that functionality. Each usertory also has a few Acceptance Criteria. A userstory can look like this:
+##### Userstory
+As a **user** I want to be able to upload my sound bites to the website **so that** I can play them on the website. This is a userstory for my soundboard application (IP). 
+##### Acceptance Criteria
+1. The user must be able to upload sound files in mp3 format.
+2. After uploading, the user should be able to see the uploaded sound files in the list of available sound bites on the website.
+3. The uploaded sound files must be properly stored on the website's server and not damaged during the load process.
+4. The user should be able to select and play an uploaded sound bite on the website by clicking on it.
+5. The website should display a clear error message if an audio file upload fails so that the user is aware of the problem.
+6. Playback of the sound files should be smooth without delays or stuttering on both desktop and mobile devices.
+7. The website should be compatible with several popular web browsers (e.g. Chrome, Firefox) and should not cause compatibility issues during the uploading and playing of sound files.
+8. The user must be able to upload multiple sound files and they must be displayed correctly in the list of available sound bites on the website.
 
 
 ### implementation
@@ -29,14 +48,16 @@ there are of course outer agile methods such as:
 
 - **Kanban**
 
-    Kanban is a scheduling system for lean manufacturing. Taiichi Ohno, an industrial engineer at Toyota, developed kanban to improve manufacturing efficiency. The system takes its name from the cards that track production within a factory. Kanban is also known as the Toyota nameplate system in the automotive industry.
+  Kanban is a simple and easy way to plan things for your project. If you're working with Kanban, you'll be working in boards with columns like: `requested`, `in progress`, `done`. in these boards and columns you'll find cards with tasks on them. These tasks are related to user stories and only describe a small thing of the _todo_ list .Here follows an image of what Kanban can look like:
+
+![](https://teamhood.com/wp-content/uploads/2021/09/Simple-kanban-board-example.png)
 
 - **extreme programming**
 
-  Extreme Programming (XP) is an agile software development methodology that emphasizes collaboration, adaptability, and customer satisfaction. It promotes a set of practices, such as continuous integration, test-driven development, and pair programming, to enhance software quality and responsiveness to changing customer requirements. XP aims to deliver high-quality software in short development cycles, fostering a close working relationship between developers and customers throughout the project. This iterative and customer-centric approach helps in managing uncertainties and delivering a product that better aligns with user needs.
+  Extreme Programming (XP) is a software development approach driven by five core values. Emphasizing simplicity, XP encourages starting with the simplest effective solution. Communication is vital, promoting open dialogue and quick problem-solving within the team. The methodology integrates feedback directly, ensuring constant communication with customers for adaptability. Courage is required for honest updates and an adaptable approach to challenges. Respect is fundamental, fostering a culture of mutual respect among team members and with customers, creating a foundation for effective collaboration.
 
 ## Sources
 
-- [](https://en.wikipedia.org/wiki/Extreme_programming)
+- [](https://asana.com/resources/extreme-programming-xp)
 - [](https://www.digite.com/kanban/what-is-kanban/) 
 - [](https://www.digite.com/agile/agile-methodology/#agile-methodology)

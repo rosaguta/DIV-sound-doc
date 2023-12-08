@@ -1,5 +1,13 @@
 # CI/CD
 
+>**Learning outcome**
+>
+>You implement a (semi)automated software release process that matches the needs of the project context.
+>
+>**Clarification**
+>
+>Implement: You implement a continuous integration and delivery solution (using e.g. Gitlab CI and Docker).
+
 ## GitHub Actions
 For early testing purposes, I've configured a GitHub Actions workflow to test a C# application and push it to Docker Hub.
 
@@ -100,5 +108,3 @@ build:
   needs:
     - test
 ```
-
-These improvements aim to provide clearer explanations and enhance readability.

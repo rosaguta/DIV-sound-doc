@@ -1,6 +1,18 @@
 # Professional
 
-For this module I have done the following things:
+>**Learning outcome:**
+>
+>You act in a professional manner during software development and learning.
+>
+> **Clarifiction**
+>
+>
+>**Professional manner:**
+>
+>You develop software as a team effort according to a prescribed software methodology and following team agreements. You are able to track your work progress and communicate your progress with the team.
+>
+>You actively ask and apply feedback from stakeholders and advise them on the most optimal technical and design (architectural) solutions.
+>You choose and substantiate solutions for a given problem.
 
 ## Professional document (GP)
 For my group project I've set up a professional guideline for us to follow.
