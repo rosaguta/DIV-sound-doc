@@ -33,9 +33,9 @@ As a **user** I want to be able to upload my sound bites to the website **so tha
 
 
 ### implementation
-- [sprint board](https://digitalindividuals.notion.site/32aa2490d93545caa66a5f18227045b4?v=252422c9f1b74f06aad5a78cc227e466&pvs=4)
-- [backlog](https://digitalindividuals.notion.site/9c406281782c45088e8c2afb197776f1?v=cd5d47e895234081b4b90d1da8602fac&pvs=4)
-- [sprint planning](https://digitalindividuals.notion.site/32aa2490d93545caa66a5f18227045b4?v=83f1676a28884bc4ab5c8d62844712a0&pvs=4) 
+- ![sprintboard](sprintboard.png)
+- ![backlog.png](backlog.png)
+- ![sprint_planning.png](sprint_planning.png) 
 
 
 ## Other methodologies
@@ -52,12 +52,8 @@ there are other agile methods such as:
 
 ![](https://teamhood.com/wp-content/uploads/2021/09/Simple-kanban-board-example.png)
 
-- **extreme programming**
-
-  Extreme Programming (XP) is a software development approach driven by five core values. Emphasizing simplicity, XP encourages starting with the simplest effective solution. Communication is vital, promoting open dialogue and quick problem-solving within the team. The methodology integrates feedback directly, ensuring constant communication with customers for adaptability. Courage is required for honest updates and an adaptable approach to challenges. Respect is fundamental, fostering a culture of mutual respect among team members and with customers, creating a foundation for effective collaboration.
 
 ## Sources
 
-- [](https://asana.com/resources/extreme-programming-xp)
 - [](https://www.digite.com/kanban/what-is-kanban/) 
 - [](https://www.digite.com/agile/agile-methodology/#agile-methodology)

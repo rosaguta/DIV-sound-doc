@@ -59,6 +59,7 @@ jobs:
         docker tag testwebapp:latest digitalroseuwu/testwebapp:latest
         docker push digitalroseuwu/testwebapp:latest
 ```
+# Backend(API)
 
 ## Gitlab Pipelines
 After transitioning from GitHub to Gitlab (not the Fontys one), I've set up Gitlab pipelines with the following configuration:
@@ -161,3 +162,66 @@ main_test:
 ```
 
 This job ensures that the last available code in the main branch viable is to clone / run
+
+
+# Frontend
+
+For the frontend I wrote a simple pipeline that executes the tests i wrote in the CI/CD
+
+Here follows the `gitlab.yml` config
+
+```yaml
+stages:
+  - test
+
+
+e2efirefox:
+    tags:
+        - backend
+    image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+    stage: test
+    script:
+    # install dependencies
+    - npm ci
+    # start the server in the background
+    - echo -e "NEXT_PUBLIC_AUDIO_API=http://138.201.52.251:9999\nNEXT_PUBLIC_SOCKET=http://138.201.52.251:9997" > .env.local
+
+    - npm run build; npm start &
+    # run Cypress tests
+    - npx cypress run --browser firefox
+```
+
+
+Normally I would write something that would build a docker image of the frontend based on the results of the tests but i am not able to write a docker image for the frontend. If i want to create a docker image for my frontend i would need to make a docker in docker image.
+
+I do have a `dockerfile` that builds the frontend
+
+```yaml
+# Use the official Node.js image as the base image
+FROM node:latest
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install project dependencies
+RUN npm install
+
+# Copy the entire project to the working directory
+COPY . .
+ARG NEXT_PUBLIC_AUDIO_API
+ARG NEXT_PUBLIC_SOCKET
+# Build the Next.js project
+RUN npm run build
+
+# Expose the port that the Next.js app will run on
+EXPOSE 3000
+
+# Command to start the Next.js app
+CMD ["npm", "run", "start"]
+
+```
+
+There are indeed some `ARG`'s for specifying some API's but these arnt used 

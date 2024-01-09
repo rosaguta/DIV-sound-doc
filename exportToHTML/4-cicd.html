@@ -1,4 +1,4 @@
-<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2023-12-08T10:15:47.687830849"><meta name="build-number" content="${buildNumber}">       <title>CI/CD | PORTFOLIO S3</title><script id="virtual-toc-data" type="application/json">[{"id":"github-actions","level":0,"title":"GitHub Actions","anchor":"#github-actions"},{"id":"gitlab-pipelines","level":0,"title":"Gitlab Pipelines","anchor":"#gitlab-pipelines"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="CI/CD | PORTFOLIO S3"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="PORTFOLIO S3 Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="4-cicd.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="CI/CD | PORTFOLIO S3"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "4-cicd.html#webpage", "url": "4-cicd.html", "name": "CI/CD | PORTFOLIO S3", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "PORTFOLIO S3 Help" }</script><!-- End Schema.org --></head>      <body data-id="4_CICD" data-main-title="CI/CD" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Learning Outcomes"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>PORTFOLIO S3  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="4_CICD"   id="4_CICD.md">CI/CD</h1>  <aside class="prompt" data-type="tip" data-title="" id="8ef57aa1_952"><p id="8ef57aa1_953"><span class="control" id="8ef57aa1_954">Learning outcome</span></p><p id="8ef57aa1_955">You implement a (semi)automated software release process that matches the needs of the project context.</p><p id="8ef57aa1_956"><span class="control" id="8ef57aa1_957">Clarification</span></p><p id="8ef57aa1_958">Implement: You implement a continuous integration and delivery solution (using e.g. Gitlab CI and Docker).</p></aside><section class="chapter"><h2 id="github-actions" data-toc="github-actions"   >GitHub Actions</h2><p id="8ef57aa1_959">For early testing purposes, I've configured a GitHub Actions workflow to test a C# application and push it to Docker Hub.</p><figure  id="8ef57aa1_960"><img alt="GitHub Actions" src="images/github_actions.png" title="GitHub Actions"  width="1159" height="745"></figure><p id="8ef57aa1_961">Here's the YAML configuration behind the GitHub Actions:</p><div class="code-block" data-lang="yaml"         >
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-08T09:39:15.52606323"><meta name="build-number" content="${buildNumber}">       <title>CI/CD | PORTFOLIO S3</title><script id="virtual-toc-data" type="application/json">[{"id":"github-actions","level":0,"title":"GitHub Actions","anchor":"#github-actions"},{"id":"backend-api","level":0,"title":"Backend(API)","anchor":"#backend-api"},{"id":"gitlab-pipelines","level":0,"title":"Gitlab Pipelines","anchor":"#gitlab-pipelines"},{"id":"frontend","level":0,"title":"Frontend","anchor":"#frontend"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="CI/CD | PORTFOLIO S3"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="PORTFOLIO S3 Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="4-cicd.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="CI/CD | PORTFOLIO S3"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "4-cicd.html#webpage", "url": "4-cicd.html", "name": "CI/CD | PORTFOLIO S3", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "PORTFOLIO S3 Help" }</script><!-- End Schema.org --></head>      <body data-id="4_CICD" data-main-title="CI/CD" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Learning Outcomes"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>PORTFOLIO S3  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="4_CICD"   id="4_CICD.md">CI/CD</h1>  <aside class="prompt" data-type="tip" data-title="" id="82638844_566"><p id="82638844_567"><span class="control" id="82638844_568">Learning outcome</span></p><p id="82638844_569">You implement a (semi)automated software release process that matches the needs of the project context.</p><p id="82638844_570"><span class="control" id="82638844_571">Clarification</span></p><p id="82638844_572">Implement: You implement a continuous integration and delivery solution (using e.g. Gitlab CI and Docker).</p></aside><section class="chapter"><h2 id="github-actions" data-toc="github-actions"   >GitHub Actions</h2><p id="82638844_573">For early testing purposes, I've configured a GitHub Actions workflow to test a C# application and push it to Docker Hub.</p><figure  id="82638844_574"><img alt="GitHub Actions" src="images/github_actions.png" title="GitHub Actions"  width="1159" height="745"></figure><p id="82638844_575">Here's the YAML configuration behind the GitHub Actions:</p><div class="code-block" data-lang="yaml"         >
 name: .NET Core Desktop
 
 on:
@@ -41,26 +41,23 @@ jobs:
         docker build . -t testwebapp:latest -f ./testwebapp/Dockerfile
         docker tag testwebapp:latest digitalroseuwu/testwebapp:latest
         docker push digitalroseuwu/testwebapp:latest
-</div></section><section class="chapter"><h2 id="gitlab-pipelines" data-toc="gitlab-pipelines"   >Gitlab Pipelines</h2><p id="8ef57aa1_963">After transitioning from GitHub to Gitlab (not the Fontys one), I've set up Gitlab pipelines with the following configuration:</p><figure  id="8ef57aa1_964"><img alt="Gitlab Pipelines" src="images/gitlab_dependency.png" title="Gitlab Pipelines"  width="1110" height="480"></figure><section class="chapter"><h3 id="unittest" data-toc="unittest"   >Unittest</h3><p id="8ef57aa1_965">In the following piece of YAML, a job is configured to download a Docker image, run it, and execute the <code class="code" id="8ef57aa1_966">dotnet test</code> command inside that container.</p><div class="code-block" data-lang="yaml"         >
+</div></section><section class="chapter"><h2 id="backend-api" data-toc="backend-api"   >Backend(API)</h2></section><section class="chapter"><h2 id="gitlab-pipelines" data-toc="gitlab-pipelines"   >Gitlab Pipelines</h2><p id="82638844_577">After transitioning from GitHub to Gitlab (not the Fontys one), I've set up Gitlab pipelines with the following configuration:</p><figure  id="82638844_578"><img alt="gitlab_dependency2.png" src="images/gitlab_dependency2.png" title="gitlab_dependency2.png"  width="853" height="264"></figure><section class="chapter"><h3 id="unittest" data-toc="unittest"   >Unittest</h3><p id="82638844_579">In the following piece of YAML, a job is configured to download a Docker image, run it, and execute the <code class="code" id="82638844_580">dotnet test</code> command inside that container.</p><div class="code-block" data-lang="yaml"         >
 stages:
   - build
+  - merge
+  - final_test
 
-variables:
-  Solution_Name: &quot;DIV-SOUND-backend.sln&quot;
-  Test_Project_Path: UnitTest/UnitTest.csproj
 
 test:
   tags:
     - backend
   stage: build
   script:
-    - ls DIV-SOUND-backend
-    - pwd
-    - dotnet test $Test_Project_Path
+    - dotnet test
   only:
     - master
   image: mcr.microsoft.com/dotnet/nightly/sdk:7.0
-</div><p id="8ef57aa1_968">If the unittest succeeds without an error, a job is triggered to build an image from the current repository and push it to Docker Hub. Here's the relevant part of the YAML:</p><div class="code-block" data-lang="yaml"         >
+</div><p id="82638844_582">If the unittest succeeds without an error, a job is triggered to build an image from the current repository and push it to Docker Hub. Here's the relevant part of the YAML:</p><div class="code-block" data-lang="yaml"         >
 build:
   tags:
     - backend
@@ -76,4 +73,48 @@ build:
     - master
   needs:
     - test
-</div></section></section><div class="last-modified"> Last modified: 08 December 2023</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="3-agile-method.html">Agile Method</a>   <a class="navigation-links__next" href="6-requirement-and-design.html">Requirements and design</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
+</div><p id="82638844_584">If that job also completes without failure, the following job gets ran:</p><div class="code-block" data-lang="yaml"         >
+push_to_main:
+  tags:
+    - backend
+  stage: merge
+  script:
+    - apk update
+    - apk add git
+    - git config --global user.email &quot;rvleeuwen@DigitalIndividuals.com&quot;
+    - git config --global user.name &quot;Rose van Leeuwen&quot;
+    - cd $TMPDIR || exit 1
+    - credentials=$(echo -n &quot;:$pat&quot; | base64)
+    - git clone https://r.vanleeuwen:&lt;PAT&gt;@git.digitalindividuals.com/rvleeuwen/div-sound-backend.git || exit 1
+    - cd div-sound-backend || exit 1
+    - git branch
+    - echo &quot;$CI_COMMIT_MESSAGE&quot;
+    - echo &quot;merging from Development to main&quot;
+    - git pull -a
+    - git merge origin/master -X theirs -m &quot;$CI_COMMIT_MESSAGE&quot;
+    - git push origin main
+    - echo $mergeMessage
+  only:
+    - master
+  needs:
+    - build
+</div><p id="82638844_586">This job is responsible for merging the <code class="code" id="82638844_587">master</code> branch to the main branch (the <code class="code" id="82638844_588">master</code> branch is my development branch, but I'm too lazy to change it)</p><p id="82638844_589">I also have the following job in the main branch:</p><div class="code-block" data-lang="yaml"         >
+main_test:
+  tags:
+    - backend
+  stage: final_test
+  only:
+    - main
+  script:
+    - apt-get update
+    - apt-get install -y openjdk-21-jdk
+    - ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+    - ENV PATH $PATH:$JAVA_HOME/bin
+    - export PATH=&quot;$PATH:/root/.dotnet/tools&quot;
+    - dotnet tool install --global dotnet-sonarscanner
+    - export SONAR_TOKEN=0ee26b65d77314b8c278ecd08863e68764f6a247
+    - dotnet sonarscanner begin /o:digitialindividuals /k:digitialindividuals_digitialindividuals /d:sonar.host.url=https://sonarcloud.io
+    - dotnet test
+    - dotnet sonarscanner end
+  image: mcr.microsoft.com/dotnet/nightly/sdk:7.0
+</div><p id="82638844_591">This job ensures that the last available code in the main branch viable is to clone / run</p></section></section><section class="chapter"><h2 id="frontend" data-toc="frontend"   >Frontend</h2></section><div class="last-modified"> Last modified: 08 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="3-agile-method.html">Agile Method</a>   <a class="navigation-links__next" href="6-requirement-and-design.html">Requirements and design</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

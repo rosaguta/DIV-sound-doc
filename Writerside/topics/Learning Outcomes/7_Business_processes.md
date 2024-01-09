@@ -13,3 +13,21 @@
 >or
 >
 >Business processes needed for the success of your software development project (e.g., product release, market release, financial assurance).
+
+
+## Without my soundboard application
+
+![discord-soundboard.png](discord-soundboard.png)
+
+This process is not optimal because everyone needs to have the same files on their own system. They also need to have a program in which can play these sound files (most operating systems have these). They also have to time the exact time to play those sound files. The timing of playing these sound files can ruin the _fun_ factor because they may need to pause their game or pause whatever else they are doing.
+
+
+## With my soundboard application
+
+![divsoundboardprocess.png](divsoundboardprocess.png)
+
+This process is much more optimal for keeping the _fun_ factor. This process may need more steps and preparation but this is only for 1 user of the group. The rest of the group only need to open the shared link they got from **User A** and need to open it in their favorite browser. When clicking on sound file in the shared link, this will play the exact same time for you as for the rest.
+
+## Conclusion
+
+In conclusion its way more optimal to use the web based soundboard application to keep the _fun_ factor.

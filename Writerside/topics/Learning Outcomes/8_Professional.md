@@ -126,3 +126,23 @@ chart is gebaseerd op de aantal uren per taak.
     d.  De estimated time per taak wordt bijgehouden in notion
 
 
+
+## Retrospective
+
+after each sprint we valuate on what when wrong, what went right and what should be changed in our workflow or other things. We do this by coming together and grabbing a whiteboard. everyone has to tell the group on what went right, wrong or some things that need some change.
+
+Here follows some images:
+
+A full image of our retrospective (if you open the image in a different tab, it will get more readable) :
+
+![](retro1.jpg)
+
+here you can see that we added a column for things that needed some research. You can also see that we already did some tasks assignments for our group. (this was one of the first sprints):
+
+![](retro3.jpg)
+
+## Reflection
+
+After making a Professional document and by doing Retrospectives after each sprint. It was easier to know what the different tasks / Responsibilities are for everyone. This went pretty well in our group for this semester. We made a Professional document in the beginning and added things later on when needed. In the beginning this went kind of rough because nobody had worked with that kind of document before so some things went wrong. This was later resolved by noting it in the Professional document
+
+After each sprint we did a Retrospective to reflect on what went well and on what went wrong. Based on these points we made a 3rd column for things that needed to change or things that needed to be added to our workflow and or things that needed to be added to the program that we were writing.

@@ -93,7 +93,7 @@ here Follows an integration test regarding testing the output of the API:
 
 ```C#
 [Test]
-public async Task CreateBoardF3romUserid_NoUserIdGiven()
+public async Task CreateBoardFromUserid_NoUserIdGiven()
 {
     string boardname = "ThisGetsNeverAdded";
 
@@ -122,7 +122,7 @@ private IUserDal _testdal { get; set; }
         _testdal = new UserDal();
     }
 ```
-in This stage I set up   the Data Access layer for the unit tests that get executed. On the very first line I call the `DALTest` library I made. This library contains some static data that emulates a real database.
+in This stage I set up the Data Access layer for the unit tests that get executed. On the very first line I call the `DALTest` library I made. This library contains some static data that emulates a real database.
 
 #### unit tests
 Here follows a test for trying to retrieve a user in the database
@@ -140,9 +140,89 @@ I check the following
 
 - That the created variable is set to false.
 
+**how many unit tests am i going to make?**
+
+I will not be making many unit tests because I hardly have any methods that _do_ things. The methods that i have only retrieve things from the database. The Method I can test is my password encryption and decryption.
+here follows 2 unit tests regarding checking if the password is correct based on the user credentials:
+
+**UnitTests\UserTests.cs**
+```C#
+[Test]
+ public void CheckPassword_correct()
+  {
+      User user = new User("", "", "", "Rose", "string", _testdal);
+      bool PasswordIsCorrect = user.CheckPassword("string");
+      Assert.That(PasswordIsCorrect, Is.EqualTo(true));
+  }
+[Test]
+  public void CheckPassowrd_Incorrect()
+  {
+      User user = new User("Rose", "van Leeuwen", "Mail@mail.com", "Rose", "string", _testdal);
+      bool PasswordIsCorrect = user.CheckPassword("SomeRandomInorrectPassword");
+      Assert.That(PasswordIsCorrect, Is.EqualTo(false));
+  }
+```
+**Logic\User.cs**
+```C#
+public bool CheckPassword(string Password)
+{
+    try
+    {
+        UserDTO userDTO = UserDal.GetUser(Username);
+        User user = userDTO.ConvertToLogic();
+        string password = user.B64Decode();
+        if (password != null)
+        {
+            if (password == Password)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    catch (Exception ex)
+    {
+        return false;
+    }
+}
+private string B64Decode()
+{
+    byte[] data = Convert.FromBase64String(Passhash);
+    string DecodedString = Encoding.UTF8.GetString(data);
+    return DecodedString;
+}
+```
+**DALTest\UserDal.cs**
+```C#
+public class UserDal : IUserDal
+{
+    public UserDTO GetUser(string username)
+    {
+        if (username == "Rose")
+        {
+            return new UserDTO(0,"Rose", "van Leeuwen", "Rose@mail.com", "Rose", "c3RyaW5n");
+        }
+        return null;
+    }
+}   
+```
+
+In the code snippets above you'll see that I have created 2 unit tests and I have provided some context regarding the testDAL and the actual method that is being tested.
+
+the first Unit test checks if the given `User` has the correct credentials. It does this by passing a password in the `CheckPassword()` method. This function tries to get the user from the given DAL (`DALTest\UserDal.cs`). and on successfull retrieval of the user it'll check if the password is correct by decoding the password that was retrieved from the 'database' and checking if the given password from the user is the same as the decoded password.    
+
+the second test does the same thing as the first test but the given password is incorrect so the test should return false
+
+here are the results:
+
+![unittest_result.png](unittest_result.png)
+
 ### Jetbrains Qodana (NOT USED)
 
-I've chosen for Qodana for analyzing my code
+#### Not Used?
+
+The reason that I am not going to use this software is because there were licensing issues. So I'm not going to use this software anymore. In the next heading you'll see the software I used to scan my code
 
 #### why Qodana?
 
@@ -150,11 +230,11 @@ Qodana performs static code analysis, which means it analyzes the source code wi
 
 One of the notable features of Qodana is its integration with JetBrains IDEs, allowing developers to run code quality checks directly from the IDE interface. This tight integration simplifies the workflow for developers, making it easier to address code quality issues promptly.
 
-*this is not yet implemented*
+*this is not going to be implemented*
 
 ### Sonarcloud
 
-I've chosen for Sonarcloud to perfrom some sofware quality checks.
+I've chosen for Sonarcloud to perform some software quality checks.
 
 #### Why a code analysis service
 
@@ -171,9 +251,8 @@ i have provided an image of what my first software quality check is
 you'll see that the security rating an E(lowest rating) is. this is because I wrote a connectionstring including the password in a file in plain text. Sonar doesn't really like that :p
 
 
-You'll see in the image below that i have fixed 1 code smells error:
+You'll see in the image below that I have fixed 1 code smells error:
 
 ![codesmellsfix.png](codesmellsfix.png)
 
-The fix was:
-
+The fix was the return object of an audiofileDAL function was not nullable
