@@ -30,4 +30,4 @@ This process is much more optimal for keeping the _fun_ factor. This process may
 
 ## Conclusion
 
-In conclusion its way more optimal to use the web based soundboard application to keep the _fun_ factor.
+In conclusion, the soundboard application offers a more streamlined and user-friendly experience compared to the traditional method. The conventional approach relies on everyone having the same files, a compatible program, and precise timing, which can be annoying and disrupt the overall enjoyment. On the other hand, the soundboard application simplifies the process for users in a group. With a shared link, only the initiator needs to go through additional steps, ensuring synchronized playback for the entire group without the need for individual file management or timing adjustments. This enhances the overall efficiency and fun factor of the sound-sharing experience.
