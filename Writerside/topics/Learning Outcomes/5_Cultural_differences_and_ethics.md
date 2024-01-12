@@ -43,55 +43,53 @@ In comparison, Arab countries show high power distance (80), while Austria has l
 Germany maintains a balance between wealth distribution and a belief in citizen equality. 
 Conversely, the United States, with a score of 40, exhibits a more unequal wealth distribution compared to Germany, with a growing gap between the affluent and less affluent over time.
 
-Here follows an image of the Power Distance Index:
+Here follows a map of Power Distance:
 
-![Power-Distance.png](Power-Distance.png)
+![PowerDistanceMap.png](PowerDistanceMap.png)
 
 ### Individualism
 
-Individualism, measured against its counterpart, collectivism, gauges the extent to which individuals integrate into groups. 
-In individualistic societies, such as Germany (scoring 67 on Hofstede's scale), interpersonal ties are loose, with emphasis on self-care and immediate family responsibility. 
-Germany prioritizes personal achievements and individual rights, fostering loose relationships compared to collectivist societies. 
-For instance, Guatemala, scoring 6, embodies collectivism, integrating individuals into strong, cohesive in-groups like extended families, marked by unquestioning loyalty. 
-In the United States, a clear individualistic example with a score of 91, the "American dream" epitomizes the belief that anyone can rise from poverty through self-reliance, reflecting a focus on personal success and upward mobility.
+individualism and collectivism are like how people work in groups. Take Germany, for example, they're at 67 on Hofstede's scale – people there are kinda doing their own thing. It's all about personal achievements and rights, making relationships more laid-back.
+Then there's Guatemala, scoring 6, all about collectivism. They're into closely connected groups. They focus on connections rather than the work.
+And in the U.S. – They have score of 91 which translates to Individualism. The "American dream" is about making it on your own from scratch. It's all about personal success and moving up.
 
-Here follows an image of Individuality
+Here follows a map of Collectivism
 
-![Individuality.png](Individuality.png)
+![Collectivismmap.png](Collectivismmap.png)
+
+The thing that you can take away from that map is that most of the 'western'-culture are individualists. As a Dutch student I can confirm that most of the Dutch students around me are also individualists. 
+Most of them would rather work from home or sit elsewhere in school then sitting in a classroom. You can also see this in the culture difference between demand and course based. There are much more 
 
 ### Masculinity
 
-Masculinity, as opposed to femininity, relates to the distribution of gender roles in a society, presenting a fundamental issue with diverse solutions. 
-The IBM studies found that women's values vary less across societies than men's values. 
-Men's values span from assertive and competitive to modest and caring, with the former termed 'masculine' and the latter 'feminine.' 
-For instance, Germany, scoring 66 on Hofstede's scale (compared to the Netherlands' 14), 0embodies a masculine culture emphasizing assertiveness, material success, self-centeredness, power, strength, and individual achievements. 
-Similarly, the United States, with a score of 62, shares similar masculine values with Germany, reflecting a cultural emphasis on assertive and competitive traits.
+masculinity and femininity are all about how gender roles play out in a society. According to the IBM studies, women's values are kinda steady across different places, while men's values are all over the map – from assertive and competitive to modest and caring. 
+The assertive and competitive side is labeled as 'masculine,' and the modest and caring side is 'feminine.'
+Take Germany, for example, scoring 66 on Hofstede's scale (way more than the Netherlands' 14). They're all about that masculine culture – being assertive, chasing material success, a bit self-centered, all about power, strength, and individual achievements.
+And look at the U.S. with a score of 62 – they're on the same page as Germany, leaning into those assertive and competitive vibes in their culture.
 
-Here follows an image of the Masculinity (Index):
+Here follows a map of the Masculinity:
 
-![Masculinity.png](Masculinity.png)
+![MasculinityMap.png](MasculinityMap.png)
 
 ### Uncertainty Avoidance
 
-Uncertainty avoidance pertains to a society's tolerance for ambiguity, reflecting the extent to which individuals feel comfortable or uncomfortable in unstructured situations.
-Cultures with high uncertainty avoidance, like Germany (scoring 65), minimize uncertainty through strict laws, rules, and a belief in absolute Truth.
-Germans meticulously plan to avoid uncertainties and rely on regulations, preferring gradual changes to reduce risks. In contrast,the United States, scoring 46, exhibits lower uncertainty avoidance. 
-The American culture embraces a relatively lower level of discomfort with unstructured situations, evident in a more flexible approach and a less rigid reliance on rules and regulations compared to Germany.
+uncertainty avoidance is about how comfortable or not people are with unclear situations in a society. High uncertainty avoidance, like in Germany (score of 65), means they're not enthusiastic of ambiguity. They tackle it with strict laws, rules, and a strong belief in absolute Truth. Germans like to plan everything meticulously to dodge uncertainties, sticking to regulations and preferring slow changes to play it safe.
+Now, check out the U.S. with a score of 46 – they're on the lower end of uncertainty avoidance. Americans are kind of okay with a bit of uncertainty. Their culture is more flexible, less hung up on strict rules and regulations compared to Germany. They're okay with a more easygoing approach to unstructured situations.
 
-Here follows an image of the Uncertainty Avoidance Index:
+Here follows a map of the Uncertainty Avoidance:
 
-![Uncertainty Avoidance.png](Uncertainty_Avoidance.png)
+![](uncertancy_avoidancemap.png)
 
 ### Long-Term Orientation
 
-Long-Term Orientation, Hofstede's fifth cultural dimension, distinguishes thinking between the East and West.
-Initially added to discern this East-West difference, it arose from a Chinese value survey distributed across 23 countries, considering the influence of Confucius on the East.
-Long-term orientation values persistence, hierarchical relationship ordering, thrift, and a sense of shame. In contrast, short-term orientation emphasizes personal steadiness, protecting one's 'face,' respect for tradition, and reciprocation in greetings, favors, and gifts.
-This dimension reflects cultural differences in perspectives on time, planning, and societal values between regions.
+Long-Term Orientation, Hofstede's fifth cultural dimension, is designed to distinguish thinking patterns between the East and West.
+Originally introduced to capture this East-West distinction, it originated from a Chinese value survey conducted across 23 countries, taking into account the influence of Confucius in the East.
+Long-term orientation places value on persistence, hierarchical relationship structures, thrift, and a sense of shame. In contrast, short-term orientation prioritizes personal stability, safeguarding one's 'face,' respect for tradition, and reciprocation in social interactions like greetings, favors, and gifts.
+This dimension sheds light on the cultural disparities in perspectives regarding time, planning, and societal values between different regions.
 
-Here follows an image of the Long-Term Orientation
+Here follows a map of the Long-Term Orientation
 
-![Long_Term_Orientation.png](Long_Term_Orientation.png)
+![LongTermMap.png](LongTermMap.png)
 
 ## The drawbacks of using this model
 
@@ -102,15 +100,20 @@ The model has been proven to be right most of the time but do take it with a gra
 
 ### My mom (I don't want to use my mothers full name so i'm going to use 'My Mom')
 
-My mother was born in Russia and raised in Latvia during the USSR times. Her childhood at school is a very different. 
-In latvia they are more strict than the Dutch.
-Later when she moved to the netherlands and fast-forward a few years later, she started a HBO Training as a dialysis nurse. 
-She was 1 of the few `outsiders` of her class in the first year. My mom did a things a little bit more differently. As observed by my mother the dutch students in her class were always procrastinating schoolwork. That resulted in the Dutch students to experience stress. In contrast, My mother was always early with finishing assignments and always asked for help at home. 
+My mother was born and raised in Latvia during the USSR times. Her childhood at school was a very different. 
+In latvia they are more strict than the Dutch. When Latvians hear the word `must` in an assignment they have todo, That task has the first priority. In comparison, The Dutch are a little bit more laid-back when it comes of doing things that `must` be done. latvians are much more disciplined
+Latvians are much more disciplined into doing tasks regardless of the difficulty. When someone assigns them a task, That task has to be completed by X date
+
+Later when she moved to the netherlands and fast-forward a few years later, she started an HBO Training as a dialysis nurse. 
+She was 1 of the few `outsiders` of her class in the first year. My mom did a things a little bit more differently. As observed by my mother the Dutch students in her class were always procrastinating schoolwork. That resulted in the Dutch students to experience stress. In contrast, My mother was always early with finishing assignments and always asked for help at home. 
 Because Dutch isn't her first language, She asked us to re-read her work to check if the spelling and grammar is correct.
 
-She also noted that for russians that the word `must` is a must. Tasks that are defined with that word have to be done first and nothing comes in between. This is not really the case for dutch students. They are a bit more laid-back. This will lead to procrastination
 
-Russians are also more disciplined into doing tasks regardless of the difficulty.
+### My experience
+
+When doing (school) work, I started the semester very enthusiastic and completing tasks very early on, but as time went on, I have gotten more laid-back just like the Dutch students.
+I have a little bit of both worlds. I have the doing things early and doing things that must be done from my mother but i also have the laid-back features from the Dutch
+ 
 
 ## What are Ethics?
 

@@ -83,186 +83,86 @@ after pressing the submit button, you'll be redirected to the shared soundboard 
 
 ![sharedboardusers.png](sharedboardusers.png)
 
+## Socket
+
+But you might be asking yourself how do this all sync together between clients. The title gives it away but its by using sockets.
+
+### Why?
+
+I needed a quick and easy way to sync device together without using a third party software. By syncing I meant that if someone presses play on their end of the shared soundboard, It plays an audio file for all the connected users.
+
+### implementation
+
+For this project I used [socket.io](https://socket.io/) for handling clients. Socket.io provides a method to create different rooms. This is exactly what i need for my webapplication. Because I'm using `shared` soundboards, I need a way to keep the clients on that one soundboard.
+I also could use just plain websockets for this but this requires me to reinvent the wheel, which isn't ideal.
+
+The socket server isn't too intense on the software side:
+
+```Javascript
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server, {
+    cors: {
+        origin: "*" // allowing everyone to interact with this server (This isnt the most secure option but i havent gotten the time to change it)
+    }
+});
+connectedUsers = {} //keeping a list of connected users 
+
+io.on('connection', (socket) => {
+    // console.log('A user connected');
+    socket.on("joinroom", (room, user) => {
+        console.log(user + " connected to " + room)
+        connectedUsers[room] = connectedUsers[room] || []; 
+        connectedUsers[room].push(user); // storing the connected user into the connectedusers list and storing what room they got connected too
+        console.log("Room: "+room+ "\n" +"Userlist:" +connectedUsers[room]+ "\n")
+        socket.join(room);
+    })
+    socket.on("getuserlist", (room) =>{
+        console.log("pushing list to " + room)
+        console.log("the list in question:" + connectedUsers[room])
+        io.to(room).emit("userlist", connectedUsers[room]);
+    })
+    // custom userdisconnect function to remove it from the connected users list
+    socket.on("userdisconnect", (room, user) => {
+        console.log("retrieved user: "+user)
+        if (connectedUsers[room]) {
+            var index = connectedUsers[room].indexOf(user)
+            if (index !== -1) { 
+                connectedUsers[room].splice(index, 1)
+                console.log(user + " Removed from " + room)
+                console.log("new list: "+connectedUsers[room])
+                io.to(room).emit("userlist",connectedUsers[room])
+            }
+        }
+    });
+    // endpoint for pushing an url (in this case an audiofile stored on a webserver) to the room that the request came from
+    socket.on("geturl", (url, room) => {
+        console.log("a button was pressed")
+        console.log("url:", url)
+        console.log("room:", room)
+
+        io.to(room).emit('url', url)
+    })
+
+});
+// starting the server
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+### The whole process
+
+When a user goes to a shared soundboard page, They will be greeted by a prompt in which they have to enter their name or something else. Upon pressing submit a request gets made to the `connection` endpoint in which they will be stored.
+The user then will view the soundboard page where they can view the title of the soundboard, the audio elements and the connected users. 
+
+The connected users are retrieved by accessing the `getuserlist` endpoint. This endpoint will return a list of connected clients of that room
+
+upon pressing `play` on an audio element, A request gets made to the `geturl` endpoint. This endpoints responsibility is to push the audiourl to the rest of the clients of the same room. This audiourl then gets processed by the clients and put into sound.
 
-## UX Testing (GP)
-
-for our group project a member of my team made the following Usability Tests:
-
-**Project name:** Artificial Character Creator (ACC)
-
-**Objective:** The primary goal of this usability testing is to evaluate the user interface and overall usability of ACC to identify areas for improvement.
-
-Number of participants: 1
-
-Date: 12/22/2023
-
-Location: Onsite
-
-Facilitator: Milan de Haart
-
-Note Taker: Milan de Haart
-
-Tasks:
-
-**[ 1 ] Create a new character:**
-
-**Objective:** Test the ease of creating a new character.
-
-**Instructions:** Create a new character based on your own input.
-
-**[ 2 ] Edit an existing character:**
-
-**Objective:** Evaluate the editing functionality for characters.
-
-**Instructions:** Edit the details of the character you created, such as changing the input, name, age, or backstory.
-
-**[ 3 ] View versions of a character:**
-
-**Objective:** Test the versioning feature for characters.
-
-**Instructions:** Explore and view different versions of the character you made.
-
-**[ 4 ] Create a new room:**
-
-**Objective:** Assess the process of creating a new room.
-
-**Instructions:** Create a new room based on your own input.
-
-**[ 5 ] Edit an existing room:**
-
-**Objective:** Test the room editing capabilities.
-
-**Instructions:** Edit the details of the room you created, such as changing the name.
-
-**[ 6 ] View versions of a room:**
-
-**Objective:** Test the versioning feature for rooms.
-
-**Instructions:** Explore and view different versions of the room you made.
-
-**[ 7 ] Add character to a room:**
-
-**Objective:** Evaluate the ability to associate characters with rooms.
-
-**Instructions:** Explore and view different versions of the character you made.
-
-**[ 8 ] View all characters:**
-
-**Objective:** Assess the display and organization of all characters.
-
-**Instructions:** View a list of all characters in the application.
-
-**[ 9 ] Change viewing type of all characters:**
-
-**Objective:** Evaluate the flexibility in displaying characters..
-
-**Instructions:** Change the viewing type of all characters (eg. switch from grid view to list view).
-
-**[ 10 ] View all rooms:**
-
-**Objective:** Assess the display and organization of all rooms.
-
-**Instructions:** View a list of all rooms in the application.
-
-**[ 11 ] Change viewing type of all rooms:**
-
-**Objective:** Evaluate the flexibility in viewing rooms.
-
-**Instructions:** Change the viewing type of all rooms (e.g., switch from grid view to list view).
-
-
-**Metrics:**
-
-Success rate: 90,9%
-
-Task completion time:
-
-[1]: Create a new character.
-
-40 seconds
-
-[2]: Edit an existing character.
-
-Not completed (1 minute, 16 seconds)
-
-[3]: View versions of a character.
-
-12 seconds
-
-[4]: Create a new room.
-
-48 seconds
-
-[5]: Edit an existing room.
-
-24 seconds
-
-[6]: View versions of a room.
-
-13 seconds
-
-[7]: Add character to a room.
-
-7 seconds
-
-[8]: View all characters.
-
-10 seconds
-
-[9]: Change viewing type of all characters.
-
-20 seconds
-
-[10]: View all rooms.
-
-2 seconds
-
-[11]: Change viewing type of all rooms.
-
-4 seconds
-
-Error rate: 1
-Satisfaction rating: 8.5/10
-
-**Observations**
-
-**Common issues:**
-
-Difficult to identify created characters and rooms.
-
-Confusion about the edit button when accessing versions
-
-Unclear indication of which character or room has been edited.
-
-Confusion when saving changes without making any edits.
-
-Images of characters not uniform in size when displayed in lines.
-
-
-**Positive feedback:**
-
-Appreciation for the loading indicator during character generation.
-
-The ease of adding characters to a room.
-
-Instructions were clear.
-
-**Recommendations**
-
-Consider adding character names to the library view for easier identification.
-
-Clarify the purpose of the "Edit" button in the versions tab, or provide a more intuitive way to edit characters.
-
-Include room names alongside images for better recognition.
-
-Enhance the visual cues to clearly indicate the character/room that has been edited.
-
-Implement a validation mechanism to prevent saving changes without modifications.
-
-Standardize the display of character images for consistent and aesthetically pleasing view.
-
-Provide clearer feedback when certain actions are performed, such as clicking on "Edit" multiple times in the version tab.
-
-**Conclusion**
-
-In conclusion, the usability tests for the Artificial Character Creator (ACC) provided valuable insights into the application's strengths and areas for improvement. Positive feedback highlighted features such as a loading indicator and the ease of linking characters to rooms. However, common issues, including problems identifying created characters and rooms, confusion over the edit button in the versions tab and uneven display of images, point to opportunities for refinement. The recommendations aim to improve the user experience by addressing these identified areas to promote a more intuitive and user-friendly ACC.

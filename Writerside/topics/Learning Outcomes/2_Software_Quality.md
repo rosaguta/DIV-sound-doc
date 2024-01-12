@@ -13,7 +13,12 @@
 ### Cypress
 For maintaining the software quality, I have set up an End-To-End test in Next.js with [Cypress](https://docs.cypress.io/guides/overview/why-cypress). The reason i chose Cypress because its easy to test the code for multiple browsers (such as firefox and chrome), and it is also possible to integrate this into a gitlab pipeline.
 
-By monitoring if the End-To-End tests still return OK, I can ensure that the code still works / doesn't work
+#### Chosen testing method:
+
+There are 2 ways of testing you can do with cypress. You can either choose to do a component test where you test individual components. Or you can do an End-To-End (2E2) test.
+I choose to do an E2E test because with this test you can ensure that your frontend is still operational and ready for deployment. 
+
+
 #### cypress in action
 ![](cypress.gif)
 

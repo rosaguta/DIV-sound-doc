@@ -14,14 +14,14 @@ for my groupproject we used **scrum** as our agile method
 
 #### Why?
 
-The reason we choose scrum is because its an easy way to add new things to the project without losing the structure of the project. And ofcourse there are also some other methods to achieve this but we didn't really look into those.
+The reason we choose scrum is that it's an easy way to add new things to the project without losing the structure of the project. And ofcourse there are also some other methods to achieve this but we didn't really look into those.
 Scrum also allows for some customer involvement. In our case the stakeholder can add or remove some things for their liking.
 
 #### What even is scrum?
 If you're using scrum, you'll be working in sprints. each sprint is defined by an userstory that was set up beforehand before the project starts. By defining userstories, you basically set some functional requirements for your application. Each userstory is written in the view of the customer and needs to have a reasoning on why the user wants to have that functionality. Each usertory also has a few Acceptance Criteria. A userstory can look like this:
 ##### Userstory
 As a **user** I want to be able to upload my sound bites to the website **so that** I can play them on the website. This is a userstory for my soundboard application (IP). 
-##### Acceptance Criteria
+##### Acceptance Criteria (Individual project)
 1. The user must be able to upload sound files in mp3 format.
 2. After uploading, the user should be able to see the uploaded sound files in the list of available sound bites on the website.
 3. The uploaded sound files must be properly stored on the website's server and not damaged during the load process.
@@ -32,7 +32,7 @@ As a **user** I want to be able to upload my sound bites to the website **so tha
 8. The user must be able to upload multiple sound files and they must be displayed correctly in the list of available sound bites on the website.
 
 
-### implementation
+### implementation (Group Project)
 - ![sprintboard](sprintboard.png)
 - ![backlog.png](backlog.png)
 - ![sprint_planning.png](sprint_planning.png) 

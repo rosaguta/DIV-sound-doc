@@ -163,6 +163,34 @@ main_test:
 
 This job ensures that the last available code in the main branch viable is to clone / run
 
+### Release
+
+For releasing the product, I have done the following
+
+#### Dockerhub
+
+There is a docker image available on [dockerhub](https://hub.docker.com/repository/docker/digitalroseuwu/div-sound-backend/general)
+
+on this page you can view the Repository overview where a small instruction is written on how to deploy the backend
+
+![dockerhub_backend.png](dockerhub_backend.png)
+
+#### GitLab Repository
+
+There is also a GitLab Repository with a Readme.md describing on how to build and run the application if you want to run it natively
+
+![GitLab-BackendPart1.png](GitLab-BackendPart1.png)
+
+![GitLab-BackendPart2.png](GitLab-BackendPart2.png)
+
+I have made this Repository public for viewing of you want to take a look if you're interested
+
+[](https://git.digitalindividuals.com/rvleeuwen/div-sound-backend)
+
+
+
+
+
 
 # Frontend
 
@@ -192,7 +220,10 @@ e2efirefox:
 ```
 
 
-Normally I would write something that would build a docker image of the frontend based on the results of the tests but i am not able to write a docker image for the frontend. If i want to create a docker image for my frontend i would need to make a docker in docker image.
+Normally I would write something that would build a docker image of the frontend based on the results of the tests but I am not able to write a docker image for the frontend. If I want to create a docker image for my frontend I would need to make a docker in docker image.
+I am able to write a dockerfile that uses the current env file for the build
+
+how the testing is done is described in the [](2_Software_Quality.md)
 
 I do have a `dockerfile` that builds the frontend
 
